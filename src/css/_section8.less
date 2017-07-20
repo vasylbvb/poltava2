@@ -1,0 +1,152 @@
+@import "_vars";
+@import "_fonts";
+
+.examples-container {
+  min-width: 100%;
+  height: 725px;
+  padding: 0;
+  background: #dfebe9;
+  & > .examples-container__inner {
+    max-width: 100%;
+    margin: 0 auto;
+    height: 520px;
+    & > .examples-container__heading-row,
+    & > .examples-container__slider-row {
+      max-width: 100%;
+      margin: 0;
+    }
+  }
+}
+
+.examples-container__forbutton {
+  min-width: inherit;
+  height: 205px;
+  background: #383838;
+  position: relative;
+}
+
+.examples-secondary1,
+.examples-secondary2,
+.examples-secondary3 {
+  width: 50%;
+  height: 80px;
+  position: absolute;
+
+  & > img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.examples-secondary1 {
+  top: 0;
+  left: 0;
+}
+
+.examples-secondary2 {
+  top: 0;
+  right: 0;
+}
+
+.examples-secondary3 {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.examples-container__start-button {
+  display: inline-block;
+  width: 220px;
+  height: 40px;
+  line-height: 34px;
+  border: solid 3px #dfebe9;
+  border-radius: 1px;
+  color: #dfebe9;
+  font-family: "Orbitron-Bold";
+  font-size: 14px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: absolute;
+  top: 52px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  &:hover {
+    text-decoration: none;
+    background: #dfebe9;
+    color: #383838;
+  }
+}
+
+.examples-container__heading {
+  text-align: center;
+  color: #3a3a3a;
+  font-family: "Orbitron-Medium";
+  & > h2 {
+    margin: 73px 0 100px;
+    font-size: 30px;
+    line-height: 30px;
+  }
+}
+
+//Rolling slider styles
+.examples-container__slider-row {
+  height: 188px;
+  & > .examples-container__slider {
+    position: relative;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 96%;
+    height: 100%;
+  }
+}
+
+.examples-slide {
+  width: 350px;
+  height: 186px;
+  overflow: hidden;
+  position: relative;
+  & > .examples-slide__image {
+    width: 100%;
+    height: auto;
+  }
+  & > .examples-slide__hover {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  &:hover > .examples-slide__hover {
+    display: block;
+  }
+}
+
+.simple-slider__arrow-prev,
+.simple-slider__arrow-next {
+  width: 20px;
+  height: 40px;
+  position: absolute;
+  top: 50%;
+  margin-top: -20px;
+  cursor: pointer;
+  & > a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.simple-slider__arrow-prev {
+  background: url("../images/prev_btn.png") no-repeat;
+  left: -38px;
+}
+
+.simple-slider__arrow-next {
+  background: url("../images/next_btn.png") no-repeat;
+  right: -38px;
+}

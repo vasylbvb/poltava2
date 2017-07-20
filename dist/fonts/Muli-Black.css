@@ -1,0 +1,12 @@
+@font-face {
+    font-family: "Muli Black";
+    src: url("Muli-Black.eot"); /* IE9 */
+    src: url("Muli-Black.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("Muli-Black.woff") format("woff"), /* chrome, firefox */
+    url("Muli-Black.ttf") format("truetype"), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+    url("Muli-Black.svg#Muli Black") format("svg"); /* iOS 4.1- */
+    font-style: normal;
+    font-weight: normal;
+}
+
+

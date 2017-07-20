@@ -1,0 +1,118 @@
+@import "_vars";
+@import "_fonts";
+
+.ourservices-container {
+  min-width: 100%;
+  min-height: 700px;
+  position: relative;
+  background: #ffffff;
+  & > .ourservices-container__secondary {
+    min-width: inherit;
+    height: 700px;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    right: 0;
+    left: 0;
+    & > img  {
+      width: 100%;
+      height: auto;
+    }
+  }
+  & > .ourservices-container__inner {
+    max-width: @main-width;
+    margin: 0 auto;
+    min-height: inherit;
+    & > .ourservices-container__heading-row,
+    & > .ourservices-container__info-row {
+      max-width: @main-width;
+    }
+  }
+  &:after {
+    display: inline-block;
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 85px solid transparent;
+    border-right: 85px solid transparent;
+    border-top: 20px solid #ffffff;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -20px;
+    z-index: 1;
+  }
+}
+
+.ourservices-container__heading {
+  text-align: center;
+  color: @main-text-color;
+  font-family: "Orbitron-Medium";
+  & > h2 {
+    margin: 69px 0 80px;
+    font-size: 30px;
+    line-height: 30px;
+    text-transform: capitalize;
+  }
+}
+.ourservices-container__info {
+  text-align: center;
+}
+.ourservices-container__info-image {
+  width: 220px;
+  height: 166px;
+  background-image: url("../images/gb_chevron.png");
+  position: relative;
+  margin: 0 auto 55px;
+  & > img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+}
+
+.ourservices-container__info-text {
+  color: @main-text-color;
+  & > .ourservices-container__info-text-line1 {
+    font-family: "Muli-Black";
+    font-size: 24px;
+    margin: 0 0 10px;
+  }
+  & > .ourservices-container__info-text-line2 {
+    font-family: "Muli-ExtraBold";
+    font-size: 30px;
+    color: @main-green-color1;
+    margin: 0 0 12px;
+  }
+  & > .ourservices-container__info-text-line3 {
+    font-family: "Muli-SemiBold";
+    font-size: 18px;
+    margin: 0 0 5px;
+  }
+  & > .ourservices-container__info-text-price {
+    font-family: "Muli-SemiBold";
+    font-size: 24px;
+    margin: 0 0 30px;
+  }
+}
+.ourservices-container__info-button {
+  display: inline-block;
+  width: 220px;
+  height: 40px;
+  margin-bottom: 20px;
+  line-height: 34px;
+  border: solid 3px @main-green-color1;
+  border-radius: 1px;
+  color: @main-green-color1;
+  background: #ffffff;
+  font-size: 14px;
+  font-family: "Orbitron-Black";
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  &:hover {
+    text-decoration: none;
+    background: @main-green-color1;
+    color: #ffffff;
+  }
+}

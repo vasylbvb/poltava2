@@ -1,0 +1,106 @@
+@import "_vars";
+@import "_fonts";
+
+.tryit-container {
+  min-width: 100%;
+  min-height: 700px;
+  position: relative;
+  background: #1fd1b8; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(-90deg, rgb(31,209,184) 0%, rgb(46,226,201) 100%); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(-90deg, rgb(31,209,184) 0%, rgb(46,226,201) 100%); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(-90deg, rgb(31,209,184) 0%, rgb(46,226,201) 100%); /* For Firefox 3.6 to 15 */
+  background: -ms-linear-gradient( -90deg, rgb(31,209,184) 0%, rgb(46,226,201) 100%);
+  background: linear-gradient(-90deg, rgb(31,209,184) 0%, rgb(46,226,201) 100%);
+  & > .tryit-container__inner {
+    max-width: @main-width;
+    margin: 0 auto;
+    min-height: inherit;
+    & > .tryit-container__heading-row,
+    & > .tryit-container__info-row {
+      max-width: @main-width;
+    }
+  }
+}
+
+.tryit-container__heading {
+  text-align: center;
+  color: #eff3f3;
+  font-family: "Orbitron-Medium";
+  & > h2 {
+    margin: 65px 0;
+    font-size: 30px;
+    line-height: 30px;
+    text-transform: capitalize;
+    letter-spacing: 2px;
+  }
+}
+
+.tryit-container__info-row {
+  text-align: center;
+}
+.tryit-container__icon-box {
+  width: 82px;
+  height: 97px;
+  margin: 0 auto;
+  & > .tryit-container__icon {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.tryit-container__info-line1 {
+  margin: 40px 0 30px;
+  font-family: "Orbitron-Bold";
+  font-size: 36px;
+  line-height: 36px;
+  text-transform: uppercase;
+  color: #eff3f3;
+}
+
+.tryit-container__info-line2 {
+  margin: 0 0 20px;
+  padding: 0 300px;
+  font-family: "Muli-Bold";
+  font-size: 22px;
+  line-height: 22px;
+  font-style: italic;
+  color: #ffffff;
+}
+
+.tryit-container__start-button {
+  display: inline-block;
+  width: 220px;
+  height: 40px;
+  line-height: 34px;
+  border: solid 3px #ffffff;
+  border-radius: 1px;
+  color: #ffffff;
+  font-family: "Orbitron-Bold";
+  font-size: 14px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: absolute;
+  bottom: 130px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  &:hover {
+    text-decoration: none;
+    background: #ffffff;
+    color: #1fd1b8;
+  }
+}
+
+.tryit-secondary {
+  width: 50%;
+  height: 80px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  & > img {
+    width: 100%;
+    height: 100%;
+  }
+}

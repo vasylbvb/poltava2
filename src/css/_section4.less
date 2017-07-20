@@ -1,0 +1,103 @@
+@import "_vars";
+@import "_fonts";
+
+.pricelist-container {
+  min-width: 100%;
+  min-height: 329px;
+  position: relative;
+  background: #dfebe9;
+  padding: 69px 0;
+  & > .container {
+    max-width: @main-width;
+    margin: 0 auto;
+    min-height: 191px;
+    & > .row {
+      max-width: @main-width;
+      min-height: inherit;
+      text-align: center;
+      & > .pricelist-container__inner-item {
+        padding: 0 10px;
+      }
+    }
+  }
+  &:after {
+    display: inline-block;
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 576px solid transparent;
+    border-right: 576px solid transparent;
+    border-top: 97px solid #dfebe9;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -97px;
+    z-index: 1;
+  }
+}
+
+.pricelist-container__item {
+  margin-bottom: 80px;
+  font-family: "Muli-ExtraBold";
+  font-size: 24px;
+  color: @main-green-color2;
+  position: relative;
+  height: 44px;
+  & > .to-what {
+    color: @main-text-color;
+  }
+  & > .price {
+    color: @main-black-color;
+    font-family: "Muli-SemiBold";
+    font-size: 18px;
+    position: absolute;
+    bottom: -26px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+  }
+  &:after {
+    display: inline-block;
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 110px solid transparent;
+    border-right: 110px solid transparent;
+    border-top: 30px solid #eff3f3;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -30px;
+    z-index: 1;
+  }
+}
+.pricelist-container__item:hover:after {
+  border-top: 30px solid @main-green-color2;
+}
+.pricelist-container__item:hover .price {
+  color: #ffffff;
+}
+.pricelist-container__start-button {
+  display: inline-block;
+  width: 220px;
+  height: 40px;
+  line-height: 34px;
+  border: solid 3px #2c3d3b;
+  border-radius: 1px;
+  color: #2c3d3b;
+  font-family: "Orbitron-Bold";
+  font-size: 14px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  &:hover {
+    text-decoration: none;
+    background: #2c3d3b;
+    color: #ffffff;
+  }
+}
