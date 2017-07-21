@@ -103,13 +103,20 @@
 }
 
 .examples-slide {
-  width: 350px;
+  //width: 350px;
+  //width: auto !important;
   height: 186px;
+  margin-right: 15px;
   overflow: hidden;
   position: relative;
-  & > .examples-slide__image {
-    width: 100%;
-    height: auto;
+  & > a {
+    display: inline-block;
+    width: inherit;
+    height: inherit;
+    & > .examples-slide__image {
+      width: 100%;
+      height: auto;
+    }
   }
   & > .examples-slide__hover {
     display: none;

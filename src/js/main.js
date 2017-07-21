@@ -11,6 +11,43 @@ $(document).ready(function () {
         prevSelector: '.simple-slider__arrow-prev',
         nextSelector: '.simple-slider__arrow-next'
     });
+    /* $('.simple-slider').slick({
+     infinite: true,
+     speed: 300,
+     slidesToShow: 4,
+     slidesToScroll: 1,
+     arrows: true,
+     prevArrow: '.simple-slider__arrow-prev',
+     nextArrow: '.simple-slider__arrow-next',
+     responsive: [
+     {
+     breakpoint: 1024,
+     settings: {
+     slidesToShow: 3,
+     slidesToScroll: 1,
+     infinite: true
+     }
+     },
+     {
+     breakpoint: 600,
+     settings: {
+     slidesToShow: 2,
+     slidesToScroll: 1,
+     infinite: true
+     }
+     },
+     {
+     breakpoint: 480,
+     settings: {
+     arrows: false,
+     slidesToShow: 1,
+     slidesToScroll: 1,
+     infinite: true
+     }
+     }
+     ]
+     });*/
+    $('#wrapper').slickLightbox();
 
     $('.centered-slider').slick({
         centerMode: true,
@@ -40,6 +77,7 @@ $(document).ready(function () {
             }
         ]
     });
+
     // Centered slider read more button
     readMore();
     var getPrevBtn = document.querySelector(".centered-slider__button-prev"),
@@ -67,6 +105,16 @@ $(document).ready(function () {
         });
     }
 
+    //Add an eye on hover
+    var exampSlide = document.querySelector('.examples-slide');
+    exampSlide.addEventListener("mouseover", function (e) {
+        e.preventDefault();
+        var newImg = document.createElement('img');
+        newImg.setAttribute('src', 'images/hover_eye.png');
+        newImg.setAttribute('class', 'examples-slide__hover');
+        newImg.setAttribute('alt', '');
+        exampSlide.appendChild(newImg);
+    });
     //Add page button
     var addPgBtn = document.querySelector(".number-pages__addbtn");
     addPgBtn.addEventListener('click', function (e) {
@@ -87,7 +135,29 @@ $(document).ready(function () {
         quantSummRes.setAttribute("value", incrPrice);
         calculateTotal();
     });
+//Choose way of communication
+    var $commValueInput = $(".chosen-communication-way");
+    var $commNameOutEl = $(".comm-way-chosen");
+    initializeCommunicationDropdown(".form-field__contact-list", $commValueInput, $commNameOutEl);
 
+    function initializeCommunicationDropdown(listSelector, $wayIDInput, $wayNameOuputEl) {
+
+        var communicationList = document.querySelector(listSelector);
+        communicationList.addEventListener("click", function (e) {
+            var $li = $(e.target).parents(".form-field__contact-item");
+            if (!$li.length) {
+                return;
+            }
+
+            var id = $li.attr("data-id");
+            var name = $("[class=form-field__contact-item-name]", $li).text();
+
+            $wayIDInput.attr("value", id);
+            $wayNameOuputEl.text(name);
+        });
+    }
+
+//Choose package
     var $priceValueInput = $(".chosen-item__price");
     var $priceNameOutEl = $(".summary__selected-package-price-summ");
     var $projNameOutEl = $(".summary__selected-package-line2");
@@ -115,6 +185,7 @@ $(document).ready(function () {
         });
     }
 
+//Calculate summary
     function calculateTotal() {
         var quantPgPrice = document.querySelector(".number-pages__summ-price"),
             getQuantPgPrice = parseInt(quantPgPrice.getAttribute("value")),
@@ -130,8 +201,8 @@ $(document).ready(function () {
 
     var form = document.querySelector(".validate-this");
     (function () {
-        var textName = form.name,
-            textEmail = form.emailAddress,
+        var textName = form.nameClient,
+            textEmail = form.contactNumber,
             textProject = form.projectTitle;
 
         form.addEventListener("submit", validate);
@@ -209,8 +280,8 @@ $(document).ready(function () {
             document.body.appendChild(out);
         };
         var data = {
-            name: "",
-            emailAddress: "",
+            nameClient: "",
+            contactNumber: "",
             projectTitle: ""
         };
         var str = JSON.stringify(data);

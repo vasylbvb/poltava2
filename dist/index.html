@@ -661,26 +661,34 @@
                 </div>
                 <div class="row examples-container__slider-row">
                     <div class="examples-container__slider">
-                        <div class="simple-slider">
+                        <div class="simple-slider popup-slider" id="wrapper">
                             <div class="slide examples-slide">
-                                <img src="images/111.png" alt="screenshot of our work"
-                                     class="examples-slide__image">
-                                <img src="images/hover_eye.png" alt="" class="examples-slide__hover">
+                                <a href="images/111.png" target="_blank">
+                                    <img src="images/111.png" alt="screenshot of our work"
+                                         class="examples-slide__image">
+                                </a>
+                                <!--<img src="images/hover_eye.png" alt="" class="examples-slide__hover">-->
                             </div>
                             <div class="slide examples-slide">
-                                <img src="images/222.png"
-                                     alt="screenshot of our work" class="examples-slide__image">
-                                <img src="images/hover_eye.png" alt="" class="examples-slide__hover">
+                                <a href="images/222.png" target="_blank">
+                                    <img src="images/222.png"
+                                         alt="screenshot of our work" class="examples-slide__image">
+                                </a>
+                                <!--<img src="images/hover_eye.png" alt="" class="examples-slide__hover">-->
                             </div>
                             <div class="slide examples-slide">
-                                <img src="images/333.png" alt="screenshot of our work"
-                                     class="examples-slide__image">
-                                <img src="images/hover_eye.png" alt="" class="examples-slide__hover">
+                                <a href="images/333.png" target="_blank">
+                                    <img src="images/333.png" alt="screenshot of our work"
+                                         class="examples-slide__image">
+                                </a>
+                                <!--<img src="images/hover_eye.png" alt="" class="examples-slide__hover">-->
                             </div>
                             <div class="slide examples-slide">
-                                <img src="images/444.png" alt="screenshot of our work"
-                                     class="examples-slide__image">
-                                <img src="images/hover_eye.png" alt="" class="examples-slide__hover">
+                                <a href="images/444.png" target="_blank">
+                                    <img src="images/444.png" alt="screenshot of our work"
+                                         class="examples-slide__image">
+                                </a>
+                                <!--<img src="images/hover_eye.png" alt="" class="examples-slide__hover">-->
                             </div>
                         </div>
                         <div class="simple-slider__arrow-prev"></div>
@@ -743,21 +751,60 @@
                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 form-wrapper-container">
                             <div class="row form-wrapper">
                                 <div class="col-sm-6 xol-xs-12 form-field__name form-group">
-                                    <label for="name">Your name</label><br>
-                                    <input type="text" id="name" data-error="what's your name?">
+                                    <label for="nameClient">Your name</label><br>
+                                    <input type="text" id="nameClient" data-error="what's your name?">
                                 </div>
                                 <div class="col-sm-6 xol-xs-12 form-field__contact form-group">
-                                    <i class="fa fa-caret-down"></i>
-                                    <select name="communication-way" id="communication-contact">
-                                        <option value="Email">Email</option>
-                                        <option value="Skype" selected>Skype</option>
-                                        <option value="Viber">Viber</option>
-                                        <option value="Telegram">Telegram</option>
-                                        <option value="Hangouts">Hangouts</option>
-                                        <option value="WahtsApp">WahtsApp</option>
-                                    </select>
-                                    <label for="contact-number"style="display: none">Contact</label><br>
-                                    <input type="text" id="contact-number" data-error="enter your contact?">
+                                    <input type="checkbox" name="communication-way" id="communication-contact">
+                                    <label for="communication-contact"><span class="comm-way-chosen">Skype</span><i
+                                            class="fa fa-caret-down"></i></label>
+                                    <ul class="form-field__contact-list">
+                                        <li class="form-field__contact-item" data-id="1">
+                                            <input type="radio" id="contactWayChoice1" name="contactWayChoice"
+                                                   value="Email">
+                                            <label for="contactWayChoice1">
+                                                <span class="form-field__contact-item-name">Email</span>
+                                            </label>
+                                        </li>
+                                        <li class="form-field__contact-item" data-id="2">
+                                            <input type="radio" id="contactWayChoice2" name="contactWayChoice"
+                                                   value="Skype">
+                                            <label for="contactWayChoice2">
+                                                <span class="form-field__contact-item-name">Skype</span>
+                                            </label>
+                                        </li>
+                                        <li class="form-field__contact-item" data-id="3">
+                                            <input type="radio" id="contactWayChoice3" name="contactWayChoice"
+                                                   value="Viber">
+                                            <label for="contactWayChoice3">
+                                                <span class="form-field__contact-item-name">Viber</span>
+                                            </label>
+                                        </li>
+                                        <li class="form-field__contact-item" data-id="4">
+                                            <input type="radio" id="contactWayChoice4" name="contactWayChoice"
+                                                   value="Telegram">
+                                            <label for="contactWayChoice4">
+                                                <span class="form-field__contact-item-name">Telegram</span>
+                                            </label>
+                                        </li>
+                                        <li class="form-field__contact-item" data-id="5">
+                                            <input type="radio" id="contactWayChoice5" name="contactWayChoice"
+                                                   value="Hangouts">
+                                            <label for="contactWayChoice5">
+                                                <span class="form-field__contact-item-name">Hangouts</span>
+                                            </label>
+                                        </li>
+                                        <li class="form-field__contact-item" data-id="6">
+                                            <input type="radio" id="contactWayChoice6" name="contactWayChoice"
+                                                   value="WhatsApp">
+                                            <label for="contactWayChoice6">
+                                                <span class="form-field__contact-item-name">WhatsApp</span>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                    <input type="text" style="display: none" class="chosen-communication-way" value="2">
+                                    <label for="contactNumber" style="display: none">Contact</label><br>
+                                    <input type="text" id="contactNumber" data-error="enter your contact?">
                                 </div>
                                 <div class="col-xs-12 form-field__text">
                                     <label for="textArea">Message</label><br>
@@ -974,7 +1021,7 @@
                                 <h4>Order summary</h4>
                                 <div class="summary__selected-package">
                                     <p class="summary__selected-package-line1"><strong>Selected Package:</strong>
-                                        <span class="summary__selected-package-price">
+                                        <span class="summary__selected-package-price" style="display: none;">
                                         <span class="summary__selected-package-price-currency">$</span>
                                         <span class="summary__selected-package-price-summ">0</span>
                                     </span>
@@ -984,7 +1031,7 @@
                                 <hr>
                                 <div class="summary__number-pages">
                                     <p class="summary__number-pages-line1"><strong>No. of pages:</strong>
-                                        <span class="summary__number-pages-price">
+                                        <span class="summary__number-pages-price" style="display: none;">
                                         <span class="summary__number-pages-price-currency">$</span>
                                         <span class="summary__number-pages-price-summ">109</span>
                                             <input type="text" style="display: none"
@@ -996,13 +1043,15 @@
                                     </p>
                                 </div>
                                 <hr>
-                                <h5 class="summary__total-heading">Total</h5>
-                                <div class="summary__total-price">$ <span class="summary__total-price-number">0</span>
+                                <h5 class="summary__total-heading" style="display: none;">Total</h5>
+                                <div class="summary__total-price" style="display: none;">$ <span
+                                        class="summary__total-price-number">0</span>
                                     <input type="text" style="display: none" class="summary__total-price-input"
                                            value="0">
                                 </div>
                                 <div class="summary__order-btn-container">
-                                    <button class="summary__order-btn" type="submit" id="sbmBtn">Order Now</button>
+                                    <button class="summary__order-btn" type="submit" id="sbmBtn">Try It For Free
+                                    </button>
                                 </div>
                             </div>
                         </div>

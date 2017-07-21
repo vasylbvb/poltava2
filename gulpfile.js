@@ -40,6 +40,7 @@ gulp.task("vendor-css", function(){
         "node_modules/normalize-css/normalize.css",
         "node_modules/slick-carousel/slick/slick.css",
         "node_modules/slick-carousel/slick/slick-theme.css",
+        "src/libs/slick-lightbox-master/dist/slick-lightbox.css",
         "node_modules/font-awesome/css/font-awesome.css"
     ])
         .pipe(concat("bootstrap.css"))
@@ -69,6 +70,7 @@ gulp.task("vendor-js", function(){
 		"node_modules/jquery/dist/jquery.js",
         "node_modules/bootstrap/dist/js/bootstrap.js",
         "node_modules/slick-carousel/slick/slick.js",
+        "src/libs/slick-lightbox-master/dist/slick-lightbox.js",
         "src/libs/bxslider/*.js"
     ])
         .pipe(sourcemaps.init())
