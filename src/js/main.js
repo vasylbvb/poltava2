@@ -105,16 +105,6 @@ $(document).ready(function () {
         });
     }
 
-    //Add an eye on hover
-    var exampSlide = document.querySelector('.examples-slide');
-    exampSlide.addEventListener("mouseover", function (e) {
-        e.preventDefault();
-        var newImg = document.createElement('img');
-        newImg.setAttribute('src', 'images/hover_eye.png');
-        newImg.setAttribute('class', 'examples-slide__hover');
-        newImg.setAttribute('alt', '');
-        exampSlide.appendChild(newImg);
-    });
     //Add page button
     var addPgBtn = document.querySelector(".number-pages__addbtn");
     addPgBtn.addEventListener('click', function (e) {
