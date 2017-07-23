@@ -125,7 +125,7 @@ $(document).ready(function () {
         quantSummRes.setAttribute("value", incrPrice);
         calculateTotal();
     });
-//Choose way of communication
+    //Choose way of communication
     var $commValueInput = $(".chosen-communication-way");
     var $commNameOutEl = $(".comm-way-chosen");
     initializeCommunicationDropdown(".form-field__contact-list", $commValueInput, $commNameOutEl);
@@ -146,8 +146,31 @@ $(document).ready(function () {
             $wayNameOuputEl.text(name);
         });
     }
-
-//Choose package
+    //Close list aside
+    var commCheck = '#communication-contact';
+    var commLabel = '#communication-contact+label';
+    var responsCheck = '#responsive-list-toggle';
+    var responsLabel = '#responsive-list-toggle+label';
+    var nonResponsCheck = '#nonresponsive-list-toggle';
+    var nonResponsLabel = '#nonresponsive-list-toggle+label';
+    closeAside(commCheck, commLabel);
+    closeAside(responsCheck, responsLabel);
+    closeAside(nonResponsCheck, nonResponsLabel);
+    function closeAside (checkBoxSelector, checkLabelSelector) {
+        $(document).click(function (e) {
+            var aCheckBox = $(checkBoxSelector);
+            aCheckBox.prop("checked", false);
+        });
+        var aCheckBox = $(checkBoxSelector);
+        var aCheckLabel = $(checkLabelSelector);
+        $(aCheckBox).click(function (e) {
+            e.stopPropagation();
+        });
+        $(aCheckLabel).click(function (e) {
+            e.stopPropagation();
+        });
+    }
+    //Choose package
     var $priceValueInput = $(".chosen-item__price");
     var $priceNameOutEl = $(".summary__selected-package-price-summ");
     var $projNameOutEl = $(".summary__selected-package-line2");
